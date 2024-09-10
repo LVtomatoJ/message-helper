@@ -33,7 +33,8 @@ def bot_context_manager():
     except Exception as e:
         print(f'fail:{e}')
     finally:
-        add_bot_to_redis(bot)
+        if bot:
+            add_bot_to_redis(bot)
 
 
 def repeat_task():
